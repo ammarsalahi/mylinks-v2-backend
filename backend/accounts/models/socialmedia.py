@@ -1,11 +1,21 @@
 from enum import unique
 from django.db import models
 
+socials=[
+    ('telegram','تلگرام'),
+    ('twitter','توییتر'),
+    ('discord','دیسکورد'),
+    ('instagram','اینستاگرام'),
+    ('youtube','یوتیوب'),
+    ('github','گیت هاب'),
+    ('linkedin','لینکدین'),
+]
 class SocialMedia(models.Model):
 
     social_type=models.CharField(
         max_length=20,
-        verbose_name="شبکه اجتماعی"
+        verbose_name="شبکه اجتماعی",
+        choices=socials
     )
 
     username=models.CharField(
